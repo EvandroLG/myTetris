@@ -7,7 +7,7 @@ const drawMatrix = (ctx, { matrix, position }) =>
     row.forEach((value, x) => {
       if (value !== 0) {
         ctx.fillStyle = red;
-        ctx.fillRect(x, y + position.y, 1, 1);
+        ctx.fillRect(x + position.x, y + position.y, 1, 1);
       }
     });
   });
