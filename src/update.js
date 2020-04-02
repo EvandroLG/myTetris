@@ -2,6 +2,8 @@ import drawMatrix from './drawMatrix';
 import { bg } from './color';
 import player from './player';
 
+('use strict');
+
 const updateWrapper = (ctx, { width, height }) => {
   const draw = () => {
     ctx.fillStyle = bg;
