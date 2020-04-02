@@ -1,14 +1,15 @@
-'use strict';
+import { red } from './color';
 
-const drawMatrix = (matrix, context) => (
+('use strict');
+
+const drawMatrix = (ctx, { matrix, position }) =>
   matrix.forEach((row, y) => {
     row.forEach((value, x) => {
       if (value !== 0) {
-        context.fillStyle = 'red';
-        context.fillRect(x, y, 1, 1);
+        ctx.fillStyle = red;
+        ctx.fillRect(x + position.x, y + position.y, 1, 1);
       }
-    })
-  })
-);
+    });
+  });
 
 export default drawMatrix;

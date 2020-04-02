@@ -1,19 +1,21 @@
+import { bg } from './color';
 import drawMatrix from './drawMatrix';
+import player from './player';
 
-'use strict';
+('use strict');
 
 const doc = document;
 const canvas = doc.getElementById('game');
-const context = canvas.getContext('2d');
-context.scale(20, 20);
+const ctx = canvas.getContext('2d');
+ctx.scale(20, 20);
 
-context.fillStyle = '#000';
-context.fillRect(0, 0, canvas.width, canvas.height);
+ctx.fillStyle = bg;
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-const matrix = [
-  [0, 0, 0],
-  [1, 1, 1],
-  [0, 1, 0]
-];
+const draw = () => drawMatrix(ctx, player);
+const update = () => {
+  draw();
+  requestAnimationFrame(update);
+};
 
-drawMatrix(matrix, context);
+update();
