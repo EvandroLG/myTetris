@@ -1,21 +1,12 @@
-import { bg } from './color';
-import drawMatrix from './drawMatrix';
-import player from './player';
+import updateWrapper from './update';
 
 ('use strict');
 
 const doc = document;
 const canvas = doc.getElementById('game');
 const ctx = canvas.getContext('2d');
-ctx.scale(20, 20);
+ctx.scale(15, 15);
 
-ctx.fillStyle = bg;
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-const draw = () => drawMatrix(ctx, player);
-const update = () => {
-  draw();
-  requestAnimationFrame(update);
-};
+const update = updateWrapper(ctx, canvas);
 
 update();

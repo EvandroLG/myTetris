@@ -5,7 +5,7 @@ const matrix = [
 ];
 
 const player = {
-  position: { x: 5, y: 5 },
+  position: { x: 0, y: 0 },
   matrix,
 };
 
