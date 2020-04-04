@@ -18,9 +18,9 @@ const updateWrapper = (ctx, { width, height }) => {
     if (!last || delta >= 1000) {
       last = time;
       player.position.y++;
-      draw();
     }
 
+    draw();
     requestAnimationFrame(update);
   };
 
