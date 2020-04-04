@@ -6,7 +6,7 @@ const isLeftArrow = (keyCode) => keyCode === 37;
 const isRightArrow = (keyCode) => keyCode === 39;
 
 const events = () => {
-  document.addEventListener('keyup', (e) => {
+  document.addEventListener('keydown', (e) => {
     const { keyCode } = e;
 
     if (isLeftArrow(keyCode)) {
